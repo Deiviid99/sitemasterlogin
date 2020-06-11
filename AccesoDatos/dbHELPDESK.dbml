@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBHELPDESK" Class="dbHELPDESKDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.1.33;Initial Catalog=DBHELPDESK;User ID=sa" SettingsObjectName="AccesoDatos.Properties.Settings" SettingsPropertyName="DBHELPDESKConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_DEPARTAMENTO" Member="TBL_DEPARTAMENTO">
+    <Type Name="TBL_DEPARTAMENTO">
+      <Column Name="DEP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEP_DESCRIPCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DEP_DIRECCION" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="DEP_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DEP_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_DEPARTAMENTO_TBL_PERSONA" Member="TBL_PERSONA" ThisKey="DEP_ID" OtherKey="DEP_ID" Type="TBL_PERSONA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_INCIDENTE" Member="TBL_INCIDENTE">
+    <Type Name="TBL_INCIDENTE">
+      <Column Name="INC_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PRI_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EST_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INC_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INC_VIGENCIA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INC_NUMTICKET" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="INC_COMENTARIO" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="INC_TIPO" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="INC_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="INC_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_INCIDENTE_TBL_OBSERVACION" Member="TBL_OBSERVACION" ThisKey="INC_ID" OtherKey="INC_ID" Type="TBL_OBSERVACION" />
+      <Association Name="TBL_ESTADO_TBL_INCIDENTE" Member="TBL_ESTADO" ThisKey="EST_ID" OtherKey="EST_ID" Type="TBL_ESTADO" IsForeignKey="true" />
+      <Association Name="TBL_PERSONA_TBL_INCIDENTE" Member="TBL_PERSONA" ThisKey="PER_ID" OtherKey="PER_ID" Type="TBL_PERSONA" IsForeignKey="true" />
+      <Association Name="TBL_PRIORIDAD_TBL_INCIDENTE" Member="TBL_PRIORIDAD" ThisKey="PRI_ID" OtherKey="PRI_ID" Type="TBL_PRIORIDAD" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ESTADO" Member="TBL_ESTADO">
+    <Type Name="TBL_ESTADO">
+      <Column Name="EST_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EST_DESCRIPCION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EST_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EST_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_ESTADO_TBL_INCIDENTE" Member="TBL_INCIDENTE" ThisKey="EST_ID" OtherKey="EST_ID" Type="TBL_INCIDENTE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_OBSERVACION" Member="TBL_OBSERVACION">
+    <Type Name="TBL_OBSERVACION">
+      <Column Name="OBS_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INC_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OBS_FECHA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="OBS_COMENTARIO" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="OBS_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="OBS_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_INCIDENTE_TBL_OBSERVACION" Member="TBL_INCIDENTE" ThisKey="INC_ID" OtherKey="INC_ID" Type="TBL_INCIDENTE" IsForeignKey="true" />
+      <Association Name="TBL_PERSONA_TBL_OBSERVACION" Member="TBL_PERSONA" ThisKey="PER_ID" OtherKey="PER_ID" Type="TBL_PERSONA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PERSONA" Member="TBL_PERSONA">
+    <Type Name="TBL_PERSONA">
+      <Column Name="PER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEP_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PER_TIPOIDENTIFICACION" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_IDENTIFICACION" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_APELLIDOS" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_NOMBRES" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_DIRECCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_TELEFONO" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_EMAIL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PER_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PER_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_PERSONA_TBL_INCIDENTE" Member="TBL_INCIDENTE" ThisKey="PER_ID" OtherKey="PER_ID" Type="TBL_INCIDENTE" />
+      <Association Name="TBL_PERSONA_TBL_OBSERVACION" Member="TBL_OBSERVACION" ThisKey="PER_ID" OtherKey="PER_ID" Type="TBL_OBSERVACION" />
+      <Association Name="TBL_PERSONA_TBL_USUARIO" Member="TBL_USUARIO" ThisKey="PER_ID" OtherKey="PER_ID" Type="TBL_USUARIO" />
+      <Association Name="TBL_DEPARTAMENTO_TBL_PERSONA" Member="TBL_DEPARTAMENTO" ThisKey="DEP_ID" OtherKey="DEP_ID" Type="TBL_DEPARTAMENTO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_ROL" Member="TBL_ROL">
+    <Type Name="TBL_ROL">
+      <Column Name="ROL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROL_DESCRIPCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ROL_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ROL_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_ROL_TBL_USUARIO" Member="TBL_USUARIO" ThisKey="ROL_ID" OtherKey="ROL_ID" Type="TBL_USUARIO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_USUARIO" Member="TBL_USUARIO">
+    <Type Name="TBL_USUARIO">
+      <Column Name="USU_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ROL_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PER_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="USU_LOGIN" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="USU_PASSWORD" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="USU_EMAIL" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="USU_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="USU_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_PERSONA_TBL_USUARIO" Member="TBL_PERSONA" ThisKey="PER_ID" OtherKey="PER_ID" Type="TBL_PERSONA" IsForeignKey="true" />
+      <Association Name="TBL_ROL_TBL_USUARIO" Member="TBL_ROL" ThisKey="ROL_ID" OtherKey="ROL_ID" Type="TBL_ROL" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PRIORIDAD" Member="TBL_PRIORIDAD">
+    <Type Name="TBL_PRIORIDAD">
+      <Column Name="PRI_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PRI_NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PRI_STATUS" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="PRI_ADD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TBL_PRIORIDAD_TBL_INCIDENTE" Member="TBL_INCIDENTE" ThisKey="PRI_ID" OtherKey="PRI_ID" Type="TBL_INCIDENTE" />
+    </Type>
+  </Table>
+</Database>

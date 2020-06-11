@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 9.75" name="dbHELPDESK">
+  <DataContextMoniker Name="/dbHELPDESKDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7f55cf3f-797b-4152-9c96-d7de4675efdf" absoluteBounds="0.75, 4.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_DEPARTAMENTO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="08fe83d2-1bfd-42f5-b23c-c66a93527e6b" absoluteBounds="0.765, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="956af997-1054-4412-bf67-5183cfe88ee8" absoluteBounds="9.25, 4.125, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_INCIDENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16354d4d-c300-45c5-b1d5-2f3d036f7662" absoluteBounds="9.265, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ad384e7-c13d-46f8-9157-030b697a97c3" absoluteBounds="6.5, 1.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_ESTADO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7456190-5543-4664-a80b-a95eb14eaefd" absoluteBounds="6.515, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="460cadd4-76d7-48ad-a615-a1f7cdeeaa74" absoluteBounds="12, 4.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_OBSERVACION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dbe2dbd0-5cb9-433d-b764-efe1541f4729" absoluteBounds="12.015, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4599e3e-3b11-4f85-a2df-c3fb94b06c8c" absoluteBounds="3.5, 4.125, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_PERSONA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33f832bd-77d1-46e5-a43f-db0879c397f4" absoluteBounds="3.515, 4.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="692b3571-6d83-4f14-ad74-e59118279a71" absoluteBounds="3.5, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_ROL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3801f511-c133-4d83-8013-3941d3b3b7e3" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="88625a23-03ba-42dc-ba48-982ddbc067f8" absoluteBounds="6.25, 4.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_USUARIO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff6cf885-d3ac-484c-ad94-62ad7b7cffa5" absoluteBounds="6.265, 4.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57c89022-74ba-459e-86b5-fe18670ca32a" absoluteBounds="6.5, 7.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbHELPDESKDataContext/TBL_PRIORIDAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8c7d6144-aa28-4bb5-a436-1b27de5b6dfc" absoluteBounds="6.515, 8.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.40625 : 3.20359537760417); (8.40625 : 6.91750325520833); (9.25 : 6.91750325520833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_ESTADO/TBL_ESTADO_TBL_INCIDENTE" />
+      <nodes>
+        <classShapeMoniker Id="8ad384e7-c13d-46f8-9157-030b697a97c3" />
+        <classShapeMoniker Id="956af997-1054-4412-bf67-5183cfe88ee8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 5.57774983723958); (12 : 5.57774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_INCIDENTE/TBL_INCIDENTE_TBL_OBSERVACION" />
+      <nodes>
+        <classShapeMoniker Id="956af997-1054-4412-bf67-5183cfe88ee8" />
+        <classShapeMoniker Id="460cadd4-76d7-48ad-a615-a1f7cdeeaa74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.21875); (6.26041666666667 : 4.21875 : JumpStart); (6.42708333333333 : 4.21875 : JumpEnd); (8.32291666666667 : 4.21875 : JumpStart); (8.48958333333333 : 4.21875 : JumpEnd); (9.25 : 4.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_PERSONA/TBL_PERSONA_TBL_INCIDENTE" />
+      <nodes>
+        <classShapeMoniker Id="c4599e3e-3b11-4f85-a2df-c3fb94b06c8c" />
+        <classShapeMoniker Id="956af997-1054-4412-bf67-5183cfe88ee8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 4.125); (4.5 : 3.875); (6.26041666666667 : 3.875 : JumpStart); (6.42708333333333 : 3.875 : JumpEnd); (8.32291666666667 : 3.875 : JumpStart); (8.48958333333333 : 3.875 : JumpEnd); (11.625 : 3.875); (11.625 : 5.00762291861979); (12 : 5.00762291861979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_PERSONA/TBL_PERSONA_TBL_OBSERVACION" />
+      <nodes>
+        <classShapeMoniker Id="c4599e3e-3b11-4f85-a2df-c3fb94b06c8c" />
+        <classShapeMoniker Id="460cadd4-76d7-48ad-a615-a1f7cdeeaa74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.51044840494792); (3.5 : 5.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_DEPARTAMENTO/TBL_DEPARTAMENTO_TBL_PERSONA" />
+      <nodes>
+        <classShapeMoniker Id="7f55cf3f-797b-4152-9c96-d7de4675efdf" />
+        <classShapeMoniker Id="c4599e3e-3b11-4f85-a2df-c3fb94b06c8c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.54890055338542); (6.25 : 5.54890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_PERSONA/TBL_PERSONA_TBL_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="c4599e3e-3b11-4f85-a2df-c3fb94b06c8c" />
+        <classShapeMoniker Id="88625a23-03ba-42dc-ba48-982ddbc067f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.15625); (6.34375 : 1.15625); (6.34375 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_ROL/TBL_ROL_TBL_USUARIO" />
+      <nodes>
+        <classShapeMoniker Id="692b3571-6d83-4f14-ad74-e59118279a71" />
+        <classShapeMoniker Id="88625a23-03ba-42dc-ba48-982ddbc067f8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.453125 : 7.875); (8.453125 : 7.01485682942708); (9.25 : 7.01485682942708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbHELPDESKDataContext/TBL_PRIORIDAD/TBL_PRIORIDAD_TBL_INCIDENTE" />
+      <nodes>
+        <classShapeMoniker Id="57c89022-74ba-459e-86b5-fe18670ca32a" />
+        <classShapeMoniker Id="956af997-1054-4412-bf67-5183cfe88ee8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
